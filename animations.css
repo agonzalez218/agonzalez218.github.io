@@ -20,6 +20,55 @@
     animation-duration: 4s;
     animation-direction: reverse;
 }
+.pulse-teal {
+  animation: pulse-animation-teal 2s infinite;
+}
+.pulse-red {
+  animation: pulse-animation-red 2s infinite;
+}
+.pulse-blue {
+  animation: pulse-animation-blue 2s infinite;
+}
+.pulse-green {
+  animation: pulse-animation-green 2s infinite;
+}
+
+@keyframes pulse-animation-teal {
+  0% {
+    box-shadow: 0 0 0 0px rgba(8,148,140, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 30px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes pulse-animation-red {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255,0,0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes pulse-animation-green {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0,255,0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes pulse-animation-blue {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0,0,255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
 @keyframes slideinright {
     from {
       margin-left: 100%;

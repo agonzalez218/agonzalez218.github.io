@@ -7,6 +7,7 @@
 <script src="/navbar.js"></script>
 <link rel="icon" href="/icon.ico">
 <link rel="stylesheet" href="../animations.css">
+<link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -33,7 +34,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <a href="/portfolio" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Portfolio</a>
 </div>
 
-<br><br><br><br>
+<br><br><br><br><br><br>
+<div class="row">
+  <div class="column left"></div>
+  <div class="column middle w3-padding w3-card w3-center pulse-teal w3-teal w3-round " >
+    <p style="font-size:20px"> The following list contains projects that show my ability and passion in programming and working on software projects. There is an image included of each project showing either the main interface or a demo of the results. If you are interested in the project, you can click the title of the project to open a new window with the github repository. </p> 
+  </div>
+  <div class="column right"></div>
+</div>
+  
+<br><br><br><br><br><br><br><br><br><br>
 
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
@@ -41,7 +51,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <!-- First Photo Grid-->
   <div class="w3-row-padding">
     <div class="w3-third w3-container w3-margin-bottom">
-      <img src="project1.jpg" alt="Project 2 Image" style="width:80%">
+      <img src="ToDoListJavaImg.png" alt="Java To-Do List Main Interface Image" style="width:50%">
+      <div class="w3-container w3-white"> 
+        <p class="wiggle"><a href="https://github.com/agonzalez218/ToDoListJava" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>To-Do List (Java) </b> <a class="fa fa-github" href="https://github.com/agonzalez218/BestPriceSearch" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a> </a> </p>
+        <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">Java</span></p>
+        <p> IDE Used: <span class="w3-tag w3-teal w3-round">IntelliJ IDEA</span></p> 
+        <p>This program allows a user to maintain a To-Do List by allowing users to add, edit, and remove actions from the file list.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="bestPriceImg.jpg" alt="Best Price Search Main Interface Image" style="width:70%">
       <div class="w3-container w3-white"> 
         <p class="wiggle"><a href="https://github.com/agonzalez218/BestPriceSearch" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>Best Price Search </b> <a class="fa fa-github" href="https://github.com/agonzalez218/BestPriceSearch" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a> </a> </p>
         <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">Python</span></p>
@@ -50,16 +69,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       </div>
     </div>
     <div class="w3-third w3-container w3-margin-bottom">
-      <img src="project2.jpg" alt="Project 2 Image" style="width:55%">
+      <img src="raytracerImg.jpg" alt="Raytracer Test Image" style="width:55%">
       <div class="w3-container w3-white">
         <p class="wiggle"><a href="https://github.com/agonzalez218/RaytracerCPlus" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>Raytracer </b> <a class="fa fa-github" href="https://github.com/agonzalez218/RaytracerCPlus" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a> </a> </p>
         <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">C++</span></p>
         <p>Libraries and/or Frameworks: <span class="w3-tag w3-teal w3-round">OpenGL</span></p>
         <p>I created my own raytracer in C++ for my Computer Graphics course. It has shadows, reflections, and transformations.</p>
       </div>
+      <br><br><br><br><br><br><br><br>
     </div>
-    <div class="w3-third w3-container">
-      <img src="project3.gif" alt="Project 3 Image" style="width:100%">
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="fractalImg.gif" alt="Example of Sierpinski Tetrahedron fractal gif" style="width:80%">
       <div class="w3-container w3-white">
         <p class="wiggle"><a href="https://github.com/agonzalez218/OpenGLLightingFractals" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>OpenGL Lighting Fractals </b> <a class="fa fa-github" href="https://github.com/agonzalez218/OpenGLLightingFractals" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a> </a> </p>
         <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">C++</span></p>
@@ -67,24 +90,22 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <p>Fractals I coded in OpenGL in Computer Graphics with Phong and Gouraud lighting. The fractals are 3D Sierpinski triangle and Menger Sponge.</p>
       </div>
     </div>
-  </div>
-  
-  <!-- Second Photo Grid-->
-  <div class="w3-row-padding">
     <div class="w3-third w3-container w3-margin-bottom">
-      <img src="project4.jpg" alt=" Project 4 Image" style="width:50%">
-      <div class="w3-container w3-white">
-        <p class="wiggle"><a href="https://github.com/agonzalez218/BankManagement" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>Bank Management System </b> <a class="fa fa-github" href="https://github.com/agonzalez218/BankManagement" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a> </a> </p>
-        <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">Java</span></p>
-        <p>An application I played a large role in developing. It includes a login form with an account database containing user information and account balance. Transactions similar to a bank are made possible and affect the user information and account balance as necessary.</p>
+        <img src="BankMngImg.jpg" alt="Bank Management Main Interface Image" style="width:50%">
+        <div class="w3-container w3-white">
+          <p class="wiggle"><a href="https://github.com/agonzalez218/BankManagement" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>Bank Management System </b> <a class="fa fa-github" href="https://github.com/agonzalez218/BankManagement" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a> </a> </p>
+          <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">Java</span></p>
+          <p> IDE Used: <span class="w3-tag w3-teal w3-round">IntelliJ IDEA</span></p> 
+          <p>An application I played a large role in developing. It includes a login form with an account database containing user information and account balance. Transactions similar to a bank are made possible and affect the user information and account balance as necessary.</p>
       </div>
     </div>
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="project5.jpg" alt="Project 5 Image" style="width:100%">
-      <div class="w3-container w3-white">
-        <p class="wiggle"><a href="https://github.com/agonzalez218/MinHeapvsBST" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>Minheap vs Binary Search Tree </b> <a class="fa fa-github" href="https://github.com/agonzalez218/MinHeapvsBST" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a> </a> </p>
-        <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">C</span></p>
-        <p>This program compares how quickly these two structures, min heap and binary search tree, find the minimum value from different sets of test data. </p>
+      <div class="w3-third w3-container w3-margin-bottom">
+        <img src="BSTVHeapImg.jpg" alt="Min Heap VS Binary Search Tree Results Image" style="width:80%">
+        <div class="w3-container w3-white">
+          <p class="wiggle"><a href="https://github.com/agonzalez218/MinHeapvsBST" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>Minheap vs Binary Search Tree </b> <a class="fa fa-github" href="https://github.com/agonzalez218/MinHeapvsBST" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a> </a> </p>
+          <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">C</span></p>
+          <p>This program compares how quickly these two structures, min heap and binary search tree, find the minimum value from different sets of test data. </p>
+        </div>
       </div>
     </div>
   </div>

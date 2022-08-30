@@ -1,0 +1,41 @@
+.column {
+    float: left;
+    padding: 10px;
+  }
+  
+.left, .right {
+    width: 15%;
+  }
+  
+.middle {
+    width: 70%;
+  }
+  
+.row:after {
+    content: "";
+    display: table;
+  }
+
+.dot-red {
+    height: 25px;
+    width: 25px;
+    background-color: #Ff0000;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+.dot-blue {
+    height: 25px;
+    width: 25px;
+    background-color: #0000FF;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+.dot-green {
+    height: 25px;
+    width: 25px;
+    background-color: #00FF00;
+    border-radius: 50%;
+    display: inline-block;
+  }
