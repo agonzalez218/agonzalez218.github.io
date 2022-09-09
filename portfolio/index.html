@@ -18,7 +18,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+  <div class="w3-bar w3-teal w3-wide w3-padding w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="/" class="w3-bar-item w3-button w3-padding-large">Kiwis Codex</a>
     <div class="w3-right w3-hide-small">
@@ -29,9 +29,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </div>
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-wide w3-white w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:55px">
-  <a href="/about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About Me</a>
-  <a href="/portfolio" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Portfolio</a>
+<div id="navDemo" class="w3-bar-block w3-wide w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:55px">
+  <a href="/about" class="w3-bar-item w3-button w3-padding-large w3-teal" onclick="myFunction()">About Me</a>
+  <a href="/portfolio" class="w3-bar-item w3-button w3-padding-large w3-teal" onclick="myFunction()">Portfolio</a>
 </div>
 
 <br><br><br><br><br><br>
@@ -50,9 +50,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <!-- First Photo Grid-->
   <div class="w3-row-padding">
     <div class="w3-third w3-container w3-margin-bottom">
+      <img src="ChessGame.png" alt="Chess Game Demo Image" style="width:55%">
+      <div class="w3-container w3-white">
+        <p class="wiggle"><a href="https://github.com/agonzalez218/JavaChessProject" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>Chess Project </b> <a class="fa fa-github" href="https://github.com/agonzalez218/JavaChessProject" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a> </a> </p>
+        <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">Java</span></p>
+        <p>IDE Used: <span class="w3-tag w3-teal w3-round">IntelliJ IDEA</span></p>
+        <p>I created my own Chess Game in Java. It has standard rules and gameplay. In addition, it has some options to change board color.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
       <img src="ToDoListJavaImg.png" alt="Java To-Do List Main Interface Image" style="width:50%">
       <div class="w3-container w3-white"> 
-        <p class="wiggle"><a href="https://github.com/agonzalez218/ToDoListJava" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>To-Do List (Java) </b> <a class="fa fa-github" href="https://github.com/agonzalez218/BestPriceSearch" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a> </a> </p>
+        <p class="wiggle"><a href="https://github.com/agonzalez218/ToDoListJava" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>To-Do List </b> <a class="fa fa-github" href="https://github.com/agonzalez218/BestPriceSearch" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a> </a> </p>
         <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">Java</span></p>
         <p> IDE Used: <span class="w3-tag w3-teal w3-round">IntelliJ IDEA</span></p> 
         <p>This program allows a user to maintain a To-Do List by allowing users to add, edit, and remove actions from the file list.</p>
@@ -67,6 +76,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <p>My senior capstone project. Allows a user to search for a product among retailers BestBuy, Walmart, and Newegg to find the best price.</p>
       </div>
     </div>
+      <br><br><br><br><br><br><br><br>
+    </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding">
     <div class="w3-third w3-container w3-margin-bottom">
       <img src="raytracerImg.jpg" alt="Raytracer Test Image" style="width:55%">
       <div class="w3-container w3-white">
@@ -75,22 +89,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <p>Libraries and/or Frameworks: <span class="w3-tag w3-teal w3-round">OpenGL</span></p>
         <p>I created my own raytracer in C++ for my Computer Graphics course. It has shadows, reflections, and transformations.</p>
       </div>
-      <br><br><br><br><br><br><br><br>
     </div>
-  
-  <!-- Second Photo Grid-->
-  <div class="w3-row-padding">
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="fractalImg.gif" alt="Example of Sierpinski Tetrahedron fractal gif" style="width:80%">
-      <div class="w3-container w3-white">
-        <p class="wiggle"><a href="https://github.com/agonzalez218/OpenGLLightingFractals" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>OpenGL Lighting Fractals </b> <a class="fa fa-github" href="https://github.com/agonzalez218/OpenGLLightingFractals" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a> </a> </p>
-        <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">C++</span></p>
-        <p>Libraries and/or Frameworks: <span class="w3-tag w3-teal w3-round">OpenGL</span></p>
-        <p>Fractals I coded in OpenGL in Computer Graphics with Phong and Gouraud lighting. The fractals are 3D Sierpinski triangle and Menger Sponge.</p>
+      <div class="w3-third w3-container w3-margin-bottom">
+        <img src="fractalImg.gif" alt="Example of Sierpinski Tetrahedron fractal gif" style="width:80%">
+        <div class="w3-container w3-white">
+          <p class="wiggle"><a href="https://github.com/agonzalez218/OpenGLLightingFractals" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>OpenGL Lighting Fractals </b> </a><a class="fa fa-github" href="https://github.com/agonzalez218/OpenGLLightingFractals" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a>  </p>
+          <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">C++</span></p>
+          <p>Libraries and/or Frameworks: <span class="w3-tag w3-teal w3-round">OpenGL</span></p>
+          <p>Fractals I coded in OpenGL in Computer Graphics with Phong and Gouraud lighting. The fractals are 3D Sierpinski triangle and Menger Sponge.</p>
+        </div>
       </div>
-    </div>
     <div class="w3-third w3-container w3-margin-bottom">
-        <img src="BankMngImg.jpg" alt="Bank Management Main Interface Image" style="width:50%">
+      <img src="BankMngImg.jpg" alt="Bank Management Main Interface Image" style="width:50%">
         <div class="w3-container w3-white">
           <p class="wiggle"><a href="https://github.com/agonzalez218/BankManagement" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><b>Bank Management System </b> <a class="fa fa-github" href="https://github.com/agonzalez218/BankManagement" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a> </a> </p>
           <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">Java</span></p>
@@ -98,6 +108,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <p>An application I played a large role in developing. It includes a login form with an account database containing user information and account balance. Transactions similar to a bank are made possible and affect the user information and account balance as necessary.</p>
       </div>
     </div>
+  </div>
+
+  <!-- Third Photo Grid-->
+  <div class="w3-row-padding">
       <div class="w3-third w3-container w3-margin-bottom">
         <img src="BSTVHeapImg.jpg" alt="Min Heap VS Binary Search Tree Results Image" style="width:80%">
         <div class="w3-container w3-white">
