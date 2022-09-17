@@ -2,16 +2,24 @@ let spring = 0.05;
 let gravity = 0.1;
 let friction = -0.9;
 
+
+
 let balls = [];
 
 function setup() {
   let canvas = createCanvas(windowWidth/2, windowHeight/4);
   canvas.parent('sketch-container')
 
-  let numBalls = random(10,20);
+  let redMin = parseInt(document.getElementById("redMin").value);
+  let redMax = parseInt(document.getElementById("redMax").value);
+  let greenMin = parseInt(document.getElementById("greenMin").value);
+  let greenMax = parseInt(document.getElementById("greenMax").value);
+  let blueMin = parseInt(document.getElementById("blueMin").value);
+  let blueMax = parseInt(document.getElementById("blueMax").value);
 
+  let numBalls = random(10,20);
   for(let i = 0; i < numBalls; i++) {
-    let color = [random(255), random(255), random(255)];
+    let color = [random(redMin, redMax), random(greenMin, greenMax), random(blueMin, blueMax)];
     balls[i] = new Ball(
       i,
       random(width), 
@@ -34,20 +42,27 @@ function draw() {
   });
 }
 
-function mousePressed()
+function createBalls()
 {
-  setup();
+
+  let redMin = parseInt(document.getElementById("redMin").value);
+  let redMax = parseInt(document.getElementById("redMax").value);
+  let greenMin = parseInt(document.getElementById("greenMin").value);
+  let greenMax = parseInt(document.getElementById("greenMax").value);
+  let blueMin = parseInt(document.getElementById("blueMin").value);
+  let blueMax = parseInt(document.getElementById("blueMax").value);
+
+
+
+  balls.forEach(ball => {
+    let color = [random(redMin, redMax), random(greenMin, greenMax), random(blueMin, blueMax)];
+    ball.color=color;
+  });
+
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  if(windowHeight > windowWidth){
-    factor = windowHeight;
-    factdiv = 1080;
-  }else{
-    factor = windowWidth;
-    factdiv = 1920;
-  }
+  setup();
 }
 
 class Ball {

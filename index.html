@@ -52,6 +52,38 @@
   <script src="sketches/ballDrop.js"></script>
 </div>
 
+<div style = "text-align:center;">
+  <div>
+    <input type="range" id="redMin" name="redMin" value = "0"
+          min="0" max = "256" step="1.0" onchange="createBalls()">
+    <label for="redMin">Red Minimum</label>
+    &emsp;&emsp;&emsp;
+    <input type="range" id="redMax" name="redMax" value = "255"
+          min="0" max = "256" step="1.0" onchange="createBalls()">
+    <label for="redMax">Red Maximum</label>
+  </div>
+  <div>
+    <input type="range" id="greenMin" name="greenMin" value = "0"
+          min="0" max = "256" step="1.0" onchange="createBalls()">
+    <label for="greenMin">Green Minimum</label>
+    &emsp;&emsp;
+    <input type="range" id="greenMax" name="greenMax" value = "255"
+          min="0" max = "256" step="1.0" onchange="createBalls()">
+    <label for="greenMax">Green Maximum</label>
+  </div>
+  <div>
+    <input type="range" id="blueMin" name="blueMin" value = "0"
+          min="0" max = "256" step="1.0" onchange="createBalls()">
+    <label for="blueMin">Blue Minimum</label>
+    &emsp;&emsp;&emsp;
+    <input type="range" id="blueMax" name="blueMax" value = "255"
+          min="0" max = "256" step="1.0" onchange="createBalls()">
+    <label for="blueMax">Blue Maximum</label>
+  </div>
+  <button type="button" onclick="setup()">Re-roll</button>
+</div>
+
+
 <p class="w3-center" > The sketch above illustrates a random number of balls, with random colors and sizes falling with gravity and collision. It was created in p5.js.</p>
 <br>
 <p class="w3-center">The About Me page contains my CV profile, including Skills, Proficient Programming Languages, Education, and Work Experience</p>
