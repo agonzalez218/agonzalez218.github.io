@@ -30,6 +30,7 @@
     <div class="w3-right w3-hide-small">
       <a href="about" class="w3-bar-item w3-button">About Me</a>
       <a href="portfolio" class="w3-bar-item w3-button">Projects</a>
+      <a href="playground" class="w3-bar-item w3-button">Playground</a>
     </div>
   </div>
 </div>
@@ -38,6 +39,7 @@
 <div id="navDemo" class="w3-bar-block w3-wide w3-teal w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:55px">
   <a href="about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About Me</a>
   <a href="portfolio" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Portfolio</a>
+  <a href="playground" class="w3-bar-item w3-button w3-padding-large w3-teal" onclick="myFunction()">Playground</a>
 </div>
 
 <br><br><br>
@@ -48,59 +50,19 @@
 <p class="w3-center fadein">I created this website using HTML, CSS, and JavaScript and hosted it using Github Pages. I utilized templates from W3Schools but edited and tailored the webpages to be my own. <br>This website is meant to show my proficency and passion for coding and software development. </p>
 
 <br>
-<div style = "text-align:center;" id ="sketch-container">
-  <script src="sketches/ballDrop.js"></script>
-</div>
+<a href="playground">
+  <div  style = "text-align:center;" id ="sketch-container">
+    <script src="sketches/demoBallDrop.js"></script>
+  </div>
+</a>
 
 <div style = "text-align:center;">
-  <div>
-    <label for="redMin">Red Min</label>
-    <input type="range" id="redMin" name="redMin" value = "0"
-    min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
-    <label id="redMinLabel" for="redMin"></label>
-    &emsp;&emsp;&emsp;
-    <label for="redMax">Red Max</label>
-    <input type="range" id="redMax" name="redMax" value = "255"
-    min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
-    <label id="redMaxLabel" for="redMax"></label>
-  <div>
-    <label for="greenMin">Green Min</label>
-    <input type="range" id="greenMin" name="greenMin" value = "0"
-    min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
-    <label id="greenMinLabel" for="greenMin"></label>
-    &emsp;&emsp;
-    <label for="greenMax">Green Max</label>
-    <input type="range" id="greenMax" name="greenMax" value = "255"
-    min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
-    <label id="greenMaxLabel" for="greenMax"></label>
-  </div>
-  <div>
-    <label for="blueMin">Blue Min</label>
-    <input type="range" id="blueMin" name="blueMin" value = "0"
-    min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
-    <label id="blueMinLabel" for="blueMin"></label>
-    &emsp;&emsp;&emsp;
-    <label for="blueMax">Blue Max</label>
-    <input type="range" id="blueMax" name="blueMax" value = "255"
-    min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
-    <label id="blueMaxLabel" for="blueMax"></label>
-  </div>
-  <div>
-    <label for="ballCount">Ball Count</label>
-    <input type="range" id="ballCount" name="ballCount" value = "1"
-    min="1" max = "256" step="1.0" onchange="setup()" oninput="setHTMLVars()">
-    <label id="ballCountLabel" for="ballCount"></label>
-    &emsp;&emsp;&emsp;
-    <label for="gravity">Gravity</label>
-    <input type="range" id="gravity" name="gravity" value = "0.1"
-          min="0.01" max = "1.0" step="0.01" onchange="setup()" oninput="setHTMLVars()">
-    <label id="gravityLabel" for="gravity"></label>
-  </div>
   <button type="button" onclick="setup()">Re-roll</button>
 </div>
 
 
-<p class="w3-center" > The sketch above illustrates a random number of balls, with random colors and sizes falling with gravity and collision. It was created in p5.js.</p>
+
+<p class="w3-center" > The sketch above illustrates a random number of balls, with random colors and sizes falling with gravity and collision. It was created in p5.js. To customize and play with the sketch, click on the sketch or go to the Playground menu!</p>
 <br>
 <p class="w3-center">The About Me page contains my CV profile, including Skills, Proficient Programming Languages, Education, and Work Experience</p>
 <p class="w3-center">The Projects page contains relevant projects I have created or participated in. I am proud of them and they show my experience and passion. </p>
