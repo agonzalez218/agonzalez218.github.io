@@ -5,7 +5,7 @@ let friction = -0.9;
 let balls = [];
 
 function setup() {
-  let canvas = createCanvas(800, 400);
+  let canvas = createCanvas(windowWidth/2, windowHeight/4);
   canvas.parent('sketch-container')
 
   let numBalls = random(10,20);
@@ -37,6 +37,17 @@ function draw() {
 function mousePressed()
 {
   setup();
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  if(windowHeight > windowWidth){
+    factor = windowHeight;
+    factdiv = 1080;
+  }else{
+    factor = windowWidth;
+    factdiv = 1920;
+  }
 }
 
 class Ball {
