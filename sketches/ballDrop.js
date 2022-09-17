@@ -7,7 +7,6 @@ let balls = [];
 function setup() {
   balls = [];
   let canvas = createCanvas(windowWidth/2, windowHeight/4);
-  console.log(windowWidth/2)
   canvas.parent('sketch-container')
 
   let redMin = parseInt(document.getElementById("redMin").value);
@@ -18,13 +17,12 @@ function setup() {
   let blueMax = parseInt(document.getElementById("blueMax").value);
   let numBalls = parseInt(document.getElementById("ballCount").value);
 
-
   for(let i = 0; i < numBalls; i++) {
     let color = [random(redMin, redMax), random(greenMin, greenMax), random(blueMin, blueMax)];
     balls[i] = new Ball(
       i,
       random(width), 
-      random(height),  
+      random(0, height/2),  
       random(25,50), 
       color,
       numBalls,
@@ -74,6 +72,7 @@ class Ball {
     this.color = color;
     this.numBalls = numBalls;
     this.others = others;
+    console.log(y)
   }
 
   collide() {
@@ -99,7 +98,7 @@ class Ball {
 
   move() {
     let gravity = parseFloat(document.getElementById("gravity").value);
-    console.log(1);
+    console.log(gravity);
     this.ySpeed += gravity;
     this.x += this.xSpeed;
     this.y += this.ySpeed;

@@ -54,40 +54,40 @@
 
 <div style = "text-align:center;">
   <div>
+    <label for="redMin">Red Min</label>
     <input type="range" id="redMin" name="redMin" value = "0"
           min="0" max = "256" step="1.0" onchange="createBalls()">
-    <label for="redMin">Red Minimum</label>
     &emsp;&emsp;&emsp;
+    <label for="redMax">Red Max</label>
     <input type="range" id="redMax" name="redMax" value = "255"
           min="0" max = "256" step="1.0" onchange="createBalls()">
-    <label for="redMax">Red Maximum</label>
   </div>
   <div>
+    <label for="greenMin">Green Min</label>
     <input type="range" id="greenMin" name="greenMin" value = "0"
           min="0" max = "256" step="1.0" onchange="createBalls()">
-    <label for="greenMin">Green Minimum</label>
     &emsp;&emsp;
+    <label for="greenMax">Green Max</label>
     <input type="range" id="greenMax" name="greenMax" value = "255"
           min="0" max = "256" step="1.0" onchange="createBalls()">
-    <label for="greenMax">Green Maximum</label>
   </div>
   <div>
+    <label for="blueMin">Blue Min</label>
     <input type="range" id="blueMin" name="blueMin" value = "0"
           min="0" max = "256" step="1.0" onchange="createBalls()">
-    <label for="blueMin">Blue Minimum</label>
     &emsp;&emsp;&emsp;
+    <label for="blueMax">Blue Max</label>
     <input type="range" id="blueMax" name="blueMax" value = "255"
           min="0" max = "256" step="1.0" onchange="createBalls()">
-    <label for="blueMax">Blue Maximum</label>
   </div>
   <div>
+    <label for="ballCount">Ball Count</label>
     <input type="range" id="ballCount" name="ballCount" value = "1"
           min="1" max = "256" step="1.0" onchange="setup()">
-    <label for="ballCount">Ball Count</label>
     &emsp;&emsp;&emsp;
+    <label for="gravity">Gravity</label>
     <input type="range" id="gravity" name="gravity" value = "0.1"
           min="0.01" max = "1.0" step="0.01" onchange="setup()">
-    <label for="gravity">Gravity</label>
   </div>
   <button type="button" onclick="setup()">Re-roll</button>
 </div>
