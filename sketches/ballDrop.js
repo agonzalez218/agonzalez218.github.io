@@ -1,5 +1,10 @@
 let spring = 0.05;
 let friction = -0.9;
+let redMin = 0, redMax = 255;
+let greenMin = 0, greenMax = 255;
+let blueMin = 0, blueMax = 255;
+let tempMin = 0, tempMax = 255;
+let initalGrav = 0.01, initalBall = 1;
 
 
 let balls = [];
@@ -9,16 +14,11 @@ function setup() {
   let canvas = createCanvas(windowWidth/2, windowHeight/4);
   canvas.parent('sketch-container')
 
-  let redMin = parseInt(document.getElementById("redMin").value);
-  let redMax = parseInt(document.getElementById("redMax").value);
-  let greenMin = parseInt(document.getElementById("greenMin").value);
-  let greenMax = parseInt(document.getElementById("greenMax").value);
-  let blueMin = parseInt(document.getElementById("blueMin").value);
-  let blueMax = parseInt(document.getElementById("blueMax").value);
+  setColorVars();
   let numBalls = parseInt(document.getElementById("ballCount").value);
 
   for(let i = 0; i < numBalls; i++) {
-    let color = [random(redMin, redMax), random(greenMin, greenMax), random(blueMin, blueMax)];
+    let color = [random(redMin, redMax+1), random(greenMin, greenMax+1), random(blueMin, blueMax+1)];
     balls[i] = new Ball(
       i,
       random(width), 
@@ -41,14 +41,38 @@ function draw() {
   });
 }
 
-function createBalls()
+function setColorVars(){
+  redMin = parseInt(document.getElementById("redMin").value);
+  redMax = parseInt(document.getElementById("redMax").value);
+  greenMin = parseInt(document.getElementById("greenMin").value);
+  greenMax = parseInt(document.getElementById("greenMax").value);
+  blueMin = parseInt(document.getElementById("blueMin").value);
+  blueMax = parseInt(document.getElementById("blueMax").value);
+  setHTMLVars();
+}
+
+function setHTMLVars(){
+  tempMin = parseInt(document.getElementById("redMin").value);
+  document.getElementById("redMinLabel").innerHTML = tempMin;
+  tempMax = parseInt(document.getElementById("redMax").value);
+  document.getElementById("redMaxLabel").innerHTML = tempMax;
+  tempMin = parseInt(document.getElementById("blueMin").value);
+  document.getElementById("blueMinLabel").innerHTML = tempMin;
+  tempMax = parseInt(document.getElementById("blueMax").value);
+  document.getElementById("blueMaxLabel").innerHTML = tempMax;
+  tempMin = parseInt(document.getElementById("greenMin").value);
+  document.getElementById("greenMinLabel").innerHTML = tempMin;
+  tempMax = parseInt(document.getElementById("greenMax").value);
+  document.getElementById("greenMaxLabel").innerHTML = tempMax;
+  initalBall = parseInt(document.getElementById("ballCount").value);
+  document.getElementById("ballCountLabel").innerHTML = initalBall;
+  initalGrav = parseFloat(document.getElementById("gravity").value);
+  document.getElementById("gravityLabel").innerHTML = initalGrav;
+}
+
+function setColor()
 {
-  let redMin = parseInt(document.getElementById("redMin").value);
-  let redMax = parseInt(document.getElementById("redMax").value);
-  let greenMin = parseInt(document.getElementById("greenMin").value);
-  let greenMax = parseInt(document.getElementById("greenMax").value);
-  let blueMin = parseInt(document.getElementById("blueMin").value);
-  let blueMax = parseInt(document.getElementById("blueMax").value);
+  setColorVars();
 
   balls.forEach(ball => {
     let color = [random(redMin, redMax), random(greenMin, greenMax), random(blueMin, blueMax)];
