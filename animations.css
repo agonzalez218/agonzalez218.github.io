@@ -13,24 +13,8 @@
 .wiggle:hover{
     animation: wiggle 2.5s infinite;
 }
-.test{
-    background-color: red;
-    position: relative;
-    animation-name: example;
-    animation-duration: 4s;
-    animation-direction: reverse;
-}
 .pulse-teal {
   animation: pulse-animation-teal 2s infinite;
-}
-.pulse-red {
-  animation: pulse-animation-red 2s infinite;
-}
-.pulse-blue {
-  animation: pulse-animation-blue 2s infinite;
-}
-.pulse-green {
-  animation: pulse-animation-green 2s infinite;
 }
 
 @keyframes pulse-animation-teal {
@@ -39,33 +23,6 @@
   }
   100% {
     box-shadow: 0 0 0 30px rgba(0, 0, 0, 0);
-  }
-}
-
-@keyframes pulse-animation-red {
-  0% {
-    box-shadow: 0 0 0 0px rgba(255,0,0, 0.7);
-  }
-  100% {
-    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
-  }
-}
-
-@keyframes pulse-animation-green {
-  0% {
-    box-shadow: 0 0 0 0px rgba(0,255,0, 0.7);
-  }
-  100% {
-    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
-  }
-}
-
-@keyframes pulse-animation-blue {
-  0% {
-    box-shadow: 0 0 0 0px rgba(0,0,255, 0.7);
-  }
-  100% {
-    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
   }
 }
 
@@ -101,14 +58,6 @@
     }
 }
 
-.container {
-    margin: 0 auto;
-    font-family: arial;
-    font-size: 24px;
-    width: 80px;
-    height: 80px;
-}
-
 @keyframes wiggle {
     0% { transform: rotate(0deg); }
    20% { transform: rotate(0deg); }
@@ -120,28 +69,4 @@
    90% { transform: rotate(-1deg); }
   100% { transform: rotate(0deg); }
 }
-
-
-  .lds-dual-ring {
-    width: 128px;
-    height: 128px;
-    border-radius: 50%;
-    border: 6px solid #08948c;
-    border-color: #08948c transparent #08948c transparent;
-    animation: lds-dual-ring 1.2s reverse infinite;
-  }
-  @keyframes lds-dual-ring {
-    0% {
-      transform: rotate(0deg);
-      border-color: #08948c transparent #08948c transparent;
-    }
-    50% {
-        transform: rotate(180deg);
-        border-color: #08948c transparent #08948c transparent;
-      }
-    100% {
-      transform: rotate(360deg);
-      border-color: #911bc0 transparent #911bc0 transparent;
-    }
-  }
   
