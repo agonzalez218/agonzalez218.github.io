@@ -1,13 +1,13 @@
 let spring = 0.05;
-let gravity = 0.1;
 let friction = -0.9;
-
 
 
 let balls = [];
 
 function setup() {
+  balls = [];
   let canvas = createCanvas(windowWidth/2, windowHeight/4);
+  console.log(windowWidth/2)
   canvas.parent('sketch-container')
 
   let redMin = parseInt(document.getElementById("redMin").value);
@@ -16,8 +16,9 @@ function setup() {
   let greenMax = parseInt(document.getElementById("greenMax").value);
   let blueMin = parseInt(document.getElementById("blueMin").value);
   let blueMax = parseInt(document.getElementById("blueMax").value);
+  let numBalls = parseInt(document.getElementById("ballCount").value);
 
-  let numBalls = random(10,20);
+
   for(let i = 0; i < numBalls; i++) {
     let color = [random(redMin, redMax), random(greenMin, greenMax), random(blueMin, blueMax)];
     balls[i] = new Ball(
@@ -44,15 +45,12 @@ function draw() {
 
 function createBalls()
 {
-
   let redMin = parseInt(document.getElementById("redMin").value);
   let redMax = parseInt(document.getElementById("redMax").value);
   let greenMin = parseInt(document.getElementById("greenMin").value);
   let greenMax = parseInt(document.getElementById("greenMax").value);
   let blueMin = parseInt(document.getElementById("blueMin").value);
   let blueMax = parseInt(document.getElementById("blueMax").value);
-
-
 
   balls.forEach(ball => {
     let color = [random(redMin, redMax), random(greenMin, greenMax), random(blueMin, blueMax)];
@@ -100,6 +98,8 @@ class Ball {
   }
 
   move() {
+    let gravity = parseFloat(document.getElementById("gravity").value);
+    console.log(1);
     this.ySpeed += gravity;
     this.x += this.xSpeed;
     this.y += this.ySpeed;
