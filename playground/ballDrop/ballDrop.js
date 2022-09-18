@@ -22,13 +22,20 @@ function setup() {
   if(windowWidth > 600)
   {
     setColorVars();
+    color = [random(redMin, redMax+1), random(greenMin, greenMax+1), random(blueMin, blueMax+1)];
   } 
   else{
     setMobileColorVars();
+    color = [random(redMin, redMax+1), random(greenMin, greenMax+1), random(blueMin, blueMax+1)];
   }
 
   for(let i = 0; i < numBalls; i++) {
-    let color = [random(redMin, redMax+1), random(greenMin, greenMax+1), random(blueMin, blueMax+1)];
+    let color = [random(255), random(255), random(255)];
+
+    if(windowWidth > 600)
+    {color = [random(redMin, redMax), random(greenMin, greenMax), random(blueMin, blueMax)];} 
+    else{color = [random(redMinMobile, redMaxMobile), random(greenMinMobile, greenMaxMobile), random(blueMinMobile, blueMaxMobile)];}
+
     balls[i] = new Ball(
       i,
       random(width), 
@@ -198,7 +205,7 @@ function setMobileColor()
   setMobileColorVars();
 
   balls.forEach(ball => {
-    let color = [random(redMin, redMax), random(greenMin, greenMax), random(blueMin, blueMax)];
+    let color = [random(redMinMobile, redMaxMobile), random(greenMinMobile, greenMaxMobile), random(blueMinMobile, blueMaxMobile)];
     ball.color=color;
   });
 }
