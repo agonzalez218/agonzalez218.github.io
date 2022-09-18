@@ -53,21 +53,53 @@ function setColorVars(){
 
 function setHTMLVars(){
   tempMin = parseInt(document.getElementById("redMin").value);
-  document.getElementById("redMinLabel").innerHTML = tempMin;
   tempMax = parseInt(document.getElementById("redMax").value);
-  document.getElementById("redMaxLabel").innerHTML = tempMax;
-  tempMin = parseInt(document.getElementById("blueMin").value);
-  document.getElementById("blueMinLabel").innerHTML = tempMin;
-  tempMax = parseInt(document.getElementById("blueMax").value);
-  document.getElementById("blueMaxLabel").innerHTML = tempMax;
+  if( tempMin < tempMax )
+  {
+    document.getElementById("redMinLabel").innerHTML = tempMin;
+    document.getElementById("redMaxLabel").innerHTML = tempMax;
+  }
+  else if( tempMin != redMin){
+    document.getElementById("redMin").value = tempMax-1;
+    document.getElementById("redMinLabel").innerHTML = tempMax-1;
+  }
+  else if( tempMax != redMax){
+    document.getElementById("redMax").value = tempMin+1;
+    document.getElementById("redMaxLabel").innerHTML = tempMin+1;
+  }
+  
   tempMin = parseInt(document.getElementById("greenMin").value);
-  document.getElementById("greenMinLabel").innerHTML = tempMin;
   tempMax = parseInt(document.getElementById("greenMax").value);
-  document.getElementById("greenMaxLabel").innerHTML = tempMax;
-  initalBall = parseInt(document.getElementById("ballCount").value);
-  document.getElementById("ballCountLabel").innerHTML = initalBall;
-  initalGrav = parseFloat(document.getElementById("gravity").value);
-  document.getElementById("gravityLabel").innerHTML = initalGrav;
+  if( tempMin < tempMax )
+  {
+    document.getElementById("greenMinLabel").innerHTML = tempMin;
+    document.getElementById("greenMaxLabel").innerHTML = tempMax;
+  }
+  else if( tempMin != greenMin){
+    document.getElementById("greenMin").value = tempMax-1;
+    document.getElementById("greenMinLabel").innerHTML = tempMax-1;
+  }
+  else if( tempMax != greenMax){
+    document.getElementById("greenMax").value = tempMin+1;
+    document.getElementById("greenMaxLabel").innerHTML = tempMin+1;
+  }
+
+  tempMin = parseInt(document.getElementById("blueMin").value);
+  tempMax = parseInt(document.getElementById("blueMax").value);
+  if( tempMin < tempMax )
+  {
+    document.getElementById("blueMinLabel").innerHTML = tempMin;
+    document.getElementById("blueMaxLabel").innerHTML = tempMax;
+  }
+  else if( tempMin != blueMin){
+    document.getElementById("blueMin").value = tempMax-1;
+    document.getElementById("blueMinLabel").innerHTML = tempMax-1;
+  }
+  else if( tempMax != blueMax){
+    document.getElementById("blueMax").value = tempMin+1;
+    document.getElementById("blueMaxLabel").innerHTML = tempMin+1;
+  }
+
 }
 
 function setColor()
