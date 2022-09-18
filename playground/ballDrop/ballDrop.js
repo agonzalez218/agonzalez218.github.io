@@ -5,6 +5,7 @@ let greenMin = 0, greenMax = 255;
 let blueMin = 0, blueMax = 255;
 let tempMin = 0, tempMax = 255;
 let initalGrav = 0.01, initalBall = 1;
+let numBalls = 1;
 
 
 let balls = [];
@@ -14,9 +15,13 @@ function setup() {
   let canvas = createCanvas(windowWidth*3/4, windowHeight/2);
   canvas.parent('sketch-container')
 
-  setColorVars();
-  setMobileColorVars();
-  let numBalls = parseInt(document.getElementById("ballCount").value);
+  if(windowWidth > 600)
+  {
+    setColorVars();
+  } 
+  else{
+    setMobileColorVars();
+  }
 
   for(let i = 0; i < numBalls; i++) {
     let color = [random(redMin, redMax+1), random(greenMin, greenMax+1), random(blueMin, blueMax+1)];
@@ -186,6 +191,8 @@ function setColor()
 }
 
 function windowResized() {
+  setHTMLVars();
+  setMobileHTMLVars();
   setup();
 }
 
