@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="navbar.js"></script>
-    <script src="sketches/p5.js"></script>
+    <script src="playground/p5.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="animations.css" />
@@ -49,18 +49,18 @@
 <h5 class="w3-center slideinright">Website created by Abel Gonzalez</h5>
 <p class="w3-center fadein">I created this website using HTML, CSS, and JavaScript and hosted it using Github Pages. I utilized templates from W3Schools but edited and tailored the webpages to be my own. <br>This website is meant to show my proficency and passion for coding and software development. </p>
 
-<br>
-<div class="row w3-row-padding">
-  <div class="column left"></div>
-  <div class="column middle">
+<div class = "row w3-row-padding">
+  <div class = "column left"></div>
+  <div class = "column middle" style="border:solid">
     <a href="playground">
-      <div style = "text-align:center;" id ="sketch-container">
-        <script src="sketches/demoBallDrop.js"></script>
+      <div id ="sketch-container" style = "text-align:center;">
+        <script src="playground/ballDrop/demoBallDrop.js"></script>
       </div>
     </a>
   </div>
-  <div class="column right"></div>
+  <div class = "column right"></div>
 </div>
+<br>
 
 <div style = "text-align:center;">
   <button type="button" onclick="setup()">Re-roll</button>

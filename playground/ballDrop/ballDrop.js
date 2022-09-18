@@ -12,7 +12,7 @@ let balls = [];
 function setup() {
   balls = [];
   let canvas = createCanvas(windowWidth*3/4, windowHeight/2);
-  canvas.parent('sketch-container');
+  canvas.parent('sketch-container')
 
   setColorVars();
   let numBalls = parseInt(document.getElementById("ballCount").value);
