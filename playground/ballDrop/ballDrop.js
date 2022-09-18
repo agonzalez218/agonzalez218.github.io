@@ -6,6 +6,10 @@ let blueMin = 0, blueMax = 255;
 let tempMin = 0, tempMax = 255;
 let initalGrav = 0.01, initalBall = 1;
 let numBalls = 1;
+let redMinMobile = 0, redMaxMobile = 255;
+let greenMinMobile = 0, greenMaxMobile = 255;
+let blueMinMobile = 0, blueMaxMobile = 255;
+let tempMinMobile = 0, tempMaxMobile = 255;
 
 
 let balls = [];
@@ -58,12 +62,12 @@ function setColorVars(){
 }
 
 function setMobileColorVars(){
-  redMin = parseInt(document.getElementById("redMinMobile").value);
-  redMax = parseInt(document.getElementById("redMaxMobile").value);
-  greenMin = parseInt(document.getElementById("greenMinMobile").value);
-  greenMax = parseInt(document.getElementById("greenMaxMobile").value);
-  blueMin = parseInt(document.getElementById("blueMinMobile").value);
-  blueMax = parseInt(document.getElementById("blueMaxMobile").value);
+  redMinMobile = parseInt(document.getElementById("redMinMobile").value);
+  redMaxMobile = parseInt(document.getElementById("redMaxMobile").value);
+  greenMinMobile = parseInt(document.getElementById("greenMinMobile").value);
+  greenMaxMobile = parseInt(document.getElementById("greenMaxMobile").value);
+  blueMinMobile = parseInt(document.getElementById("blueMinMobile").value);
+  blueMaxMobile = parseInt(document.getElementById("blueMaxMobile").value);
   setMobileHTMLVars();
 }
 
@@ -137,11 +141,11 @@ function setMobileHTMLVars(){
     document.getElementById("redMinLabelMobile").innerHTML = tempMin;
     document.getElementById("redMaxLabelMobile").innerHTML = tempMax;
   }
-  else if( tempMin != redMin){
+  else if( tempMin != redMinMobile){
     document.getElementById("redMinMobile").value = tempMax-1;
     document.getElementById("redMinLabelMobile").innerHTML = tempMax-1;
   }
-  else if( tempMax != redMax){
+  else if( tempMax != redMaxMobile){
     document.getElementById("redMaxMobile").value = tempMin+1;
     document.getElementById("redMaxLabelMobile").innerHTML = tempMin+1;
   }
@@ -153,11 +157,11 @@ function setMobileHTMLVars(){
     document.getElementById("greenMinLabelMobile").innerHTML = tempMin;
     document.getElementById("greenMaxLabelMobile").innerHTML = tempMax;
   }
-  else if( tempMin != greenMin){
+  else if( tempMin != greenMinMobile){
     document.getElementById("greenMinMobile").value = tempMax-1;
     document.getElementById("greenMinLabelMobile").innerHTML = tempMax-1;
   }
-  else if( tempMax != greenMax){
+  else if( tempMax != greenMaxMobile){
     document.getElementById("greenMaxMobile").value = tempMin+1;
     document.getElementById("greenMaxLabelMobile").innerHTML = tempMin+1;
   }
@@ -169,11 +173,11 @@ function setMobileHTMLVars(){
     document.getElementById("blueMinLabelMobile").innerHTML = tempMin;
     document.getElementById("blueMaxLabelMobile").innerHTML = tempMax;
   }
-  else if( tempMin != blueMin){
+  else if( tempMin != blueMinMobile){
     document.getElementById("blueMinMobile").value = tempMax-1;
     document.getElementById("blueMinLabelMobile").innerHTML = tempMax-1;
   }
-  else if( tempMax != blueMax){
+  else if( tempMax != blueMaxMobile){
     document.getElementById("blueMaxMobile").value = tempMin+1;
     document.getElementById("blueMaxLabelMobile").innerHTML = tempMin+1;
   }
@@ -187,7 +191,16 @@ function setColor()
     let color = [random(redMin, redMax), random(greenMin, greenMax), random(blueMin, blueMax)];
     ball.color=color;
   });
+}
 
+function setMobileColor()
+{
+  setMobileColorVars();
+
+  balls.forEach(ball => {
+    let color = [random(redMin, redMax), random(greenMin, greenMax), random(blueMin, blueMax)];
+    ball.color=color;
+  });
 }
 
 function windowResized() {
