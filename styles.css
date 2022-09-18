@@ -10,11 +10,11 @@ h1 {font-size: 30px;}
   }
   
 .left, .right {
-    width: 30%;
+    width: 10%;
   }
   
 .middle {
-    width: 40%;
+    width: 80%;
   }
   
 .row:after {
@@ -28,4 +28,27 @@ h1 {font-size: 30px;}
   font-size: 24px;
   width: 80px;
   height: 80px;
+}
+
+.desk{
+  text-align: center;
+}
+.div-only-mobile{
+  text-align: center;
+}
+@media screen and (max-width : 1920px){
+  .div-only-mobile{
+  visibility:hidden;
+  display:none;
+  }
+}
+@media screen and (max-width : 600px){
+ .desk{
+  visibility:hidden;
+  display:none;
+  }
+ .div-only-mobile{
+  visibility:visible;
+  display: block;
+  }
 }

@@ -52,20 +52,32 @@ function setColorVars(){
 }
 
 function setHTMLVars(){
+  numBalls = parseInt(document.getElementById("ballCount").value);
+  document.getElementById("ballCountLabel").innerHTML = numBalls;
+  document.getElementById("ballCountLabelMobile").innerHTML = numBalls;
+
+  gravity = parseFloat(document.getElementById("gravity").value);
+  document.getElementById("gravityLabel").innerHTML = gravity;
+  document.getElementById("gravityLabelMobile").innerHTML = gravity;
+
   tempMin = parseInt(document.getElementById("redMin").value);
   tempMax = parseInt(document.getElementById("redMax").value);
   if( tempMin < tempMax )
   {
     document.getElementById("redMinLabel").innerHTML = tempMin;
     document.getElementById("redMaxLabel").innerHTML = tempMax;
+    document.getElementById("redMinLabelMobile").innerHTML = tempMin;
+    document.getElementById("redMaxLabelMobile").innerHTML = tempMax;
   }
   else if( tempMin != redMin){
     document.getElementById("redMin").value = tempMax-1;
     document.getElementById("redMinLabel").innerHTML = tempMax-1;
+    document.getElementById("redMinLabelMobile").innerHTML = tempMax-1;
   }
   else if( tempMax != redMax){
     document.getElementById("redMax").value = tempMin+1;
     document.getElementById("redMaxLabel").innerHTML = tempMin+1;
+    document.getElementById("redMaxLabelMobile").innerHTML = tempMin+1;
   }
   
   tempMin = parseInt(document.getElementById("greenMin").value);
@@ -74,14 +86,18 @@ function setHTMLVars(){
   {
     document.getElementById("greenMinLabel").innerHTML = tempMin;
     document.getElementById("greenMaxLabel").innerHTML = tempMax;
+    document.getElementById("greenMinLabelMobile").innerHTML = tempMin;
+    document.getElementById("greenMaxLabelMobile").innerHTML = tempMax;
   }
   else if( tempMin != greenMin){
     document.getElementById("greenMin").value = tempMax-1;
     document.getElementById("greenMinLabel").innerHTML = tempMax-1;
+    document.getElementById("greenMinLabelMobile").innerHTML = tempMax-1;
   }
   else if( tempMax != greenMax){
     document.getElementById("greenMax").value = tempMin+1;
     document.getElementById("greenMaxLabel").innerHTML = tempMin+1;
+    document.getElementById("greenMaxLabelMobile").innerHTML = tempMin+1;
   }
 
   tempMin = parseInt(document.getElementById("blueMin").value);
@@ -90,14 +106,18 @@ function setHTMLVars(){
   {
     document.getElementById("blueMinLabel").innerHTML = tempMin;
     document.getElementById("blueMaxLabel").innerHTML = tempMax;
+    document.getElementById("blueMinLabelMobile").innerHTML = tempMin;
+    document.getElementById("blueMaxLabelMobile").innerHTML = tempMax;
   }
   else if( tempMin != blueMin){
     document.getElementById("blueMin").value = tempMax-1;
     document.getElementById("blueMinLabel").innerHTML = tempMax-1;
+    document.getElementById("blueMinLabelMobile").innerHTML = tempMax-1;
   }
   else if( tempMax != blueMax){
     document.getElementById("blueMax").value = tempMin+1;
     document.getElementById("blueMaxLabel").innerHTML = tempMin+1;
+    document.getElementById("blueMaxLabelMobile").innerHTML = tempMin+1;
   }
 
 }
@@ -152,7 +172,6 @@ class Ball {
   }
 
   move() {
-    let gravity = parseFloat(document.getElementById("gravity").value);
     this.ySpeed += gravity;
     this.x += this.xSpeed;
     this.y += this.ySpeed;
