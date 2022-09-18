@@ -36,12 +36,14 @@ h1 {font-size: 30px;}
 .div-only-mobile{
   text-align: center;
 }
-@media screen and (max-width : 1920px){
+
+@media screen{
   .div-only-mobile{
   visibility:hidden;
   display:none;
   }
 }
+
 @media screen and (max-width : 600px){
  .desk{
   visibility:hidden;
