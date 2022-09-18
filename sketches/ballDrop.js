@@ -11,7 +11,7 @@ let balls = [];
 
 function setup() {
   balls = [];
-  let canvas = createCanvas(windowWidth/2, windowHeight/4);
+  let canvas = createCanvas(windowWidth*3/4, windowHeight/2);
   canvas.parent('sketch-container')
 
   setColorVars();
@@ -96,7 +96,6 @@ class Ball {
     this.color = color;
     this.numBalls = numBalls;
     this.others = others;
-    console.log(y)
   }
 
   collide() {
@@ -122,7 +121,6 @@ class Ball {
 
   move() {
     let gravity = parseFloat(document.getElementById("gravity").value);
-    console.log(gravity);
     this.ySpeed += gravity;
     this.x += this.xSpeed;
     this.y += this.ySpeed;

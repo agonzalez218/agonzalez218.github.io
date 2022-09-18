@@ -5,10 +5,10 @@ let friction = -0.9;
 let balls = [];
 
 function setup() {
-    let canvas = createCanvas(windowWidth/2, windowHeight/4);
-    canvas.parent('sketch-container')
+  let canvas = createCanvas(windowWidth/2, windowHeight/2);
+  canvas.parent('sketch-container')
 
-  let numBalls = random(10,20);
+  let numBalls = random(1,windowWidth/20);
 
   for(let i = 0; i < numBalls; i++) {
     let color = [random(255), random(255), random(255)];
