@@ -13,7 +13,7 @@ function setup() {
     canvas = createCanvas(windowWidth*3/4, windowHeight/4);
     numBalls = random(1,windowWidth/40);
   }
-  if (!window.location.href.includes("playground/ballDrop") && windowWidth > 600)
+  if (window.location.href.includes("playground") && !window.location.href.includes("playground/ballDrop") && windowWidth > 600)
   {
     canvas = createCanvas(windowWidth/4, windowHeight/6);
     numBalls = random(1,windowWidth/60);
