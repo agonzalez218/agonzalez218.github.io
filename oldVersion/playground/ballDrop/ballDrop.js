@@ -1,0 +1,277 @@
+let spring = 0.05;
+let friction = -0.9;
+let redMin = 0, redMax = 255;
+let greenMin = 0, greenMax = 255;
+let blueMin = 0, blueMax = 255;
+let tempMin = 0, tempMax = 255;
+let initalGrav = 0.01, initalBall = 1;
+let numBalls = 1;
+let redMinMobile = 0, redMaxMobile = 255;
+let greenMinMobile = 0, greenMaxMobile = 255;
+let blueMinMobile = 0, blueMaxMobile = 255;
+let tempMinMobile = 0, tempMaxMobile = 255;
+
+
+let balls = [];
+
+function setup() {
+  balls = [];
+  let canvas = createCanvas(windowWidth*3/4, windowHeight/2);
+  canvas.parent('sketch-container')
+
+  if(windowWidth > 600)
+  {
+    setColorVars();
+    color = [random(redMin, redMax+1), random(greenMin, greenMax+1), random(blueMin, blueMax+1)];
+  } 
+  else{
+    setMobileColorVars();
+    color = [random(redMin, redMax+1), random(greenMin, greenMax+1), random(blueMin, blueMax+1)];
+  }
+
+  for(let i = 0; i < numBalls; i++) {
+    let color = [random(255), random(255), random(255)];
+
+    if(windowWidth > 600)
+    {color = [random(redMin, redMax), random(greenMin, greenMax), random(blueMin, blueMax)];} 
+    else{color = [random(redMinMobile, redMaxMobile), random(greenMinMobile, greenMaxMobile), random(blueMinMobile, blueMaxMobile)];}
+
+    balls[i] = new Ball(
+      i,
+      random(width), 
+      random(0, height/2),  
+      random(25,50), 
+      color,
+      numBalls,
+      balls);
+  }
+  noStroke();
+}
+
+function draw() {
+  background(50);
+
+  balls.forEach(ball => {
+    ball.collide();
+    ball.move();
+    ball.display();
+  });
+}
+
+function setColorVars(){
+  redMin = parseInt(document.getElementById("redMin").value);
+  redMax = parseInt(document.getElementById("redMax").value);
+  greenMin = parseInt(document.getElementById("greenMin").value);
+  greenMax = parseInt(document.getElementById("greenMax").value);
+  blueMin = parseInt(document.getElementById("blueMin").value);
+  blueMax = parseInt(document.getElementById("blueMax").value);
+  setHTMLVars();
+}
+
+function setMobileColorVars(){
+  redMinMobile = parseInt(document.getElementById("redMinMobile").value);
+  redMaxMobile = parseInt(document.getElementById("redMaxMobile").value);
+  greenMinMobile = parseInt(document.getElementById("greenMinMobile").value);
+  greenMaxMobile = parseInt(document.getElementById("greenMaxMobile").value);
+  blueMinMobile = parseInt(document.getElementById("blueMinMobile").value);
+  blueMaxMobile = parseInt(document.getElementById("blueMaxMobile").value);
+  setMobileHTMLVars();
+}
+
+function setHTMLVars(){
+  numBalls = parseInt(document.getElementById("ballCount").value);
+  document.getElementById("ballCountLabel").innerHTML = numBalls;
+
+  gravity = parseFloat(document.getElementById("gravity").value);
+  document.getElementById("gravityLabel").innerHTML = gravity;
+
+  tempMin = parseInt(document.getElementById("redMin").value);
+  tempMax = parseInt(document.getElementById("redMax").value);
+  if( tempMin < tempMax )
+  {
+    document.getElementById("redMinLabel").innerHTML = tempMin;
+    document.getElementById("redMaxLabel").innerHTML = tempMax;
+  }
+  else if( tempMin != redMin){
+    document.getElementById("redMin").value = tempMax-1;
+    document.getElementById("redMinLabel").innerHTML = tempMax-1;
+  }
+  else if( tempMax != redMax){
+    document.getElementById("redMax").value = tempMin+1;
+    document.getElementById("redMaxLabel").innerHTML = tempMin+1;
+  }
+  
+  tempMin = parseInt(document.getElementById("greenMin").value);
+  tempMax = parseInt(document.getElementById("greenMax").value);
+  if( tempMin < tempMax )
+  {
+    document.getElementById("greenMinLabel").innerHTML = tempMin;
+    document.getElementById("greenMaxLabel").innerHTML = tempMax;
+  }
+  else if( tempMin != greenMin){
+    document.getElementById("greenMin").value = tempMax-1;
+    document.getElementById("greenMinLabel").innerHTML = tempMax-1;
+  }
+  else if( tempMax != greenMax){
+    document.getElementById("greenMax").value = tempMin+1;
+    document.getElementById("greenMaxLabel").innerHTML = tempMin+1;
+  }
+
+  tempMin = parseInt(document.getElementById("blueMin").value);
+  tempMax = parseInt(document.getElementById("blueMax").value);
+  if( tempMin < tempMax )
+  {
+    document.getElementById("blueMinLabel").innerHTML = tempMin;
+    document.getElementById("blueMaxLabel").innerHTML = tempMax;
+  }
+  else if( tempMin != blueMin){
+    document.getElementById("blueMin").value = tempMax-1;
+    document.getElementById("blueMinLabel").innerHTML = tempMax-1;
+  }
+  else if( tempMax != blueMax){
+    document.getElementById("blueMax").value = tempMin+1;
+    document.getElementById("blueMaxLabel").innerHTML = tempMin+1;
+  }
+}
+
+function setMobileHTMLVars(){
+  numBalls = parseInt(document.getElementById("ballCountMobile").value);
+  document.getElementById("ballCountLabelMobile").innerHTML = numBalls;
+
+  gravity = parseFloat(document.getElementById("gravityMobile").value);
+  document.getElementById("gravityLabelMobile").innerHTML = gravity;
+
+  tempMin = parseInt(document.getElementById("redMinMobile").value);
+  tempMax = parseInt(document.getElementById("redMaxMobile").value);
+  if( tempMin < tempMax )
+  {
+    document.getElementById("redMinLabelMobile").innerHTML = tempMin;
+    document.getElementById("redMaxLabelMobile").innerHTML = tempMax;
+  }
+  else if( tempMin != redMinMobile){
+    document.getElementById("redMinMobile").value = tempMax-1;
+    document.getElementById("redMinLabelMobile").innerHTML = tempMax-1;
+  }
+  else if( tempMax != redMaxMobile){
+    document.getElementById("redMaxMobile").value = tempMin+1;
+    document.getElementById("redMaxLabelMobile").innerHTML = tempMin+1;
+  }
+  
+  tempMin = parseInt(document.getElementById("greenMinMobile").value);
+  tempMax = parseInt(document.getElementById("greenMaxMobile").value);
+  if( tempMin < tempMax )
+  {
+    document.getElementById("greenMinLabelMobile").innerHTML = tempMin;
+    document.getElementById("greenMaxLabelMobile").innerHTML = tempMax;
+  }
+  else if( tempMin != greenMinMobile){
+    document.getElementById("greenMinMobile").value = tempMax-1;
+    document.getElementById("greenMinLabelMobile").innerHTML = tempMax-1;
+  }
+  else if( tempMax != greenMaxMobile){
+    document.getElementById("greenMaxMobile").value = tempMin+1;
+    document.getElementById("greenMaxLabelMobile").innerHTML = tempMin+1;
+  }
+
+  tempMin = parseInt(document.getElementById("blueMinMobile").value);
+  tempMax = parseInt(document.getElementById("blueMaxMobile").value);
+  if( tempMin < tempMax )
+  {
+    document.getElementById("blueMinLabelMobile").innerHTML = tempMin;
+    document.getElementById("blueMaxLabelMobile").innerHTML = tempMax;
+  }
+  else if( tempMin != blueMinMobile){
+    document.getElementById("blueMinMobile").value = tempMax-1;
+    document.getElementById("blueMinLabelMobile").innerHTML = tempMax-1;
+  }
+  else if( tempMax != blueMaxMobile){
+    document.getElementById("blueMaxMobile").value = tempMin+1;
+    document.getElementById("blueMaxLabelMobile").innerHTML = tempMin+1;
+  }
+}
+
+function setColor()
+{
+  setColorVars();
+
+  balls.forEach(ball => {
+    let color = [random(redMin, redMax), random(greenMin, greenMax), random(blueMin, blueMax)];
+    ball.color=color;
+  });
+}
+
+function setMobileColor()
+{
+  setMobileColorVars();
+
+  balls.forEach(ball => {
+    let color = [random(redMinMobile, redMaxMobile), random(greenMinMobile, greenMaxMobile), random(blueMinMobile, blueMaxMobile)];
+    ball.color=color;
+  });
+}
+
+function windowResized() {
+  setHTMLVars();
+  setMobileHTMLVars();
+  setup();
+}
+
+class Ball {
+  constructor(id, x, y, size, color, numBalls, others) {
+    this.id = id;
+    this.x = x;
+    this.y = y;
+    this.xSpeed = 0;
+    this.ySpeed = 0;
+    this.size = size;
+    this.color = color;
+    this.numBalls = numBalls;
+    this.others = others;
+  }
+
+  collide() {
+    for (let i = this.id + 1; i < this.numBalls; i++) {
+      let dx = this.others[i].x - this.x;
+      let dy = this.others[i].y - this.y;
+      let distance = sqrt(dx * dx + dy * dy);
+      let minDist = this.others[i].size / 2 + this.size / 2;
+
+      if (distance < minDist) {
+        let angle = atan2(dy, dx);
+        let targetX = this.x + cos(angle) * minDist;
+        let targetY = this.y + sin(angle) * minDist;
+        let ax = (targetX - this.others[i].x) * spring;
+        let ay = (targetY - this.others[i].y) * spring;
+        this.xSpeed -= ax;
+        this.ySpeed -= ay;
+        this.others[i].xSpeed += ax;
+        this.others[i].ySpeed += ay;
+      }
+    }
+  }
+
+  move() {
+    this.ySpeed += gravity;
+    this.x += this.xSpeed;
+    this.y += this.ySpeed;
+    if (this.x + this.size / 2 > width) {
+      this.x = width - this.size / 2;
+      this.xSpeed *= friction;
+    } else if (this.x - this.size / 2 < 0) {
+      this.x = this.size / 2;
+      this.xSpeed *= friction;
+    }
+    if (this.y + this.size / 2 > height) {
+      this.y = height - this.size / 2;
+      this.ySpeed *= friction;
+    } else if (this.y - this.size / 2 < 0) {
+      this.y = this.size / 2;
+      this.ySpeed *= friction;
+    }
+  }
+
+  display() {
+    ellipse(this.x, this.y, this.size, this.size);
+    fill(this.color[0],this.color[1],this.color[2] );
+  }
+}

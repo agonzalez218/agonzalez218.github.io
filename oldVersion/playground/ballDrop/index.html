@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWJ9BHGMCX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JWJ9BHGMCX');
+    </script>
+    <title>Ball Drop Sketch</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../../navbar.js"></script>
+    <script src="../p5.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../animations.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" href="../../icon.ico">
+  </head>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-teal w3-wide w3-padding w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large">Kiwis Codex</a>
+    <div class="w3-right w3-hide-small">
+      <a href="/about" class="w3-bar-item w3-button">About Me</a>
+      <a href="/portfolio" class="w3-bar-item w3-button">Projects</a>
+      <a href="/playground" class="w3-bar-item w3-button">Playground</a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-wide w3-teal w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:55px">
+  <a href="/about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About Me</a>
+  <a href="/portfolio" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Portfolio</a>
+  <a href="/playground" class="w3-bar-item w3-button w3-padding-large w3-teal" onclick="myFunction()">Playground</a>
+</div>
+
+<br><br><br>
+<body>
+
+<h1 class="w3-center"> Ball Drop Sketch</h1>
+
+<br>
+<div class="row w3-row-padding">
+  <div class="column left"></div>
+  <div class="column middle" >
+    <div  id ="sketch-container">
+      <script src="ballDrop.js"></script>
+    </div>
+  </div>
+  <div class="column right"></div>
+</div>
+
+<div style = "text-align:center;" class="desk">
+  <div>
+    <label for="redMin">Red Min</label>
+    <input type="range" id="redMin" name="redMin" value = "0"
+    min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
+    <label id="redMinLabel" for="redMin"></label>
+    &emsp;&emsp;&emsp;
+    <label for="redMax">Red Max</label>
+    <input type="range" id="redMax" name="redMax" value = "255"
+    min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
+    <label id="redMaxLabel" for="redMax"></label>
+  </div>
+  <div>
+    <label for="greenMin">Green Min</label>
+    <input type="range" id="greenMin" name="greenMin" value = "0"
+    min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
+    <label id="greenMinLabel" for="greenMin"></label>
+    &emsp;&emsp;
+    <label for="greenMax">Green Max</label>
+    <input type="range" id="greenMax" name="greenMax" value = "255"
+    min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
+    <label id="greenMaxLabel" for="greenMax"></label>
+  </div>
+  <div>
+    <label for="blueMin">Blue Min</label>
+    <input type="range" id="blueMin" name="blueMin" value = "0"
+    min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
+    <label id="blueMinLabel" for="blueMin"></label>
+    &emsp;&emsp;&emsp;
+    <label for="blueMax">Blue Max</label>
+    <input type="range" id="blueMax" name="blueMax" value = "255"
+    min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
+    <label id="blueMaxLabel" for="blueMax"></label>
+  </div>
+  <div>
+    <label for="ballCount">Ball Count</label>
+    <input type="range" id="ballCount" name="ballCount" value = "1"
+    min="1" max = "256" step="1.0" onchange="setup()" oninput="setHTMLVars()">
+    <label id="ballCountLabel" for="ballCount"></label>
+    &emsp;&emsp;&emsp;
+    <label for="gravity">Gravity</label>
+    <input type="range" id="gravity" name="gravity" value = "0.1"
+          min="0.01" max = "1.0" step="0.01" onchange="setup()" oninput="setHTMLVars()">
+    <label id="gravityLabel" for="gravity"></label>
+  </div>
+  <button type="button" onclick="setup()">Re-roll</button>
+</div>
+
+<div style = "text-align:center;" class="div-only-mobile">
+  <div>
+    <label for="redMinMobile">Red Min</label>
+    <input type="range" id="redMinMobile" name="redMinMobile" value = "0"
+    min="0" max = "256" step="1.0" onchange="setMobileColor()" oninput="setMobileHTMLVars()">
+    <label id="redMinLabelMobile" for="redMinMobile"></label>
+  </div>
+  &emsp;
+  <div>
+    <label for="redMaxMobile">Red Max</label>
+    <input type="range" id="redMaxMobile" name="redMaxMobile" value = "255"
+    min="0" max = "256" step="1.0" onchange="setMobileColor()" oninput="setMobileHTMLVars()">
+    <label id="redMaxLabelMobile" for="redMaxMobile"></label>
+  </div>
+  &emsp;
+  <div>
+    <label for="greenMinMobile">Green Min</label>
+    <input type="range" id="greenMinMobile" name="greenMinMobile" value = "0"
+    min="0" max = "256" step="1.0" onchange="setMobileColor()" oninput="setMobileHTMLVars()">
+    <label id="greenMinLabelMobile" for="greenMinMobile"></label>
+  </div>
+  &emsp;
+  <div>
+    <label for="greenMaxMobile">Green Max</label>
+    <input type="range" id="greenMaxMobile" name="greenMaxMobile" value = "255"
+    min="0" max = "256" step="1.0" onchange="setMobileColor()" oninput="setMobileHTMLVars()">
+    <label id="greenMaxLabelMobile" for="greenMaxMobile"></label>
+  </div>
+  &emsp;
+  <div>
+    <label for="blueMinMobile">Blue Min</label>
+    <input type="range" id="blueMinMobile" name="blueMinMobile" value = "0"
+    min="0" max = "256" step="1.0" onchange="setMobileColor()" oninput="setMobileHTMLVars()">
+    <label id="blueMinLabelMobile" for="blueMinMobile"></label>
+  </div>
+  &emsp;
+  <div>
+    <label for="blueMaxMobile">Blue Max</label>
+    <input type="range" id="blueMaxMobile" name="blueMaxMobile" value = "255"
+    min="0" max = "256" step="1.0" onchange="setMobileColor()" oninput="setMobileHTMLVars()">
+    <label id="blueMaxLabelMobile" for="blueMaxMobile"></label>
+  </div>
+  &emsp;
+  <div>
+    <label for="ballCountMobile">Ball Count</label>
+    <input type="range" id="ballCountMobile" name="ballCountMobile" value = "1"
+    min="1" max = "256" step="1.0" onchange="setup()" oninput="setMobileHTMLVars()">
+    <label id="ballCountLabelMobile" for="ballCountMobile"></label>
+  </div>
+  &emsp;
+  <div>
+    <label for="gravityMobile">Gravity</label>
+    <input type="range" id="gravityMobile" name="gravityMobile" value = "0.1"
+          min="0.01" max = "1.0" step="0.01" onchange="setup()" oninput="setMobileHTMLVars()">
+    <label id="gravityLabelMobile" for="gravityMobile"></label>
+  </div>
+  &emsp;
+  <div>
+    <button type="button" onclick="setup()">Re-roll</button>
+  </div>
+</div>
+
+
+<p class="w3-center" > The sketch above illustrates a random number of balls, with random colors and sizes falling with gravity and collision. It was created in p5.js.</p>
+<p class="w3-center" > The sketch can be customized using the range inputs above. Press re-roll to drop new balls.</p>
+<br>
+</body>
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Find me on social media.</p>
+  <p>(Click Icons Below)</p>
+  <a class="fa fa-github w3-hover-opacity"href="https://github.com/agonzalez218" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a>
+  <a class="fa fa-linkedin w3-hover-opacity" href="https://www.linkedin.com/in/abel-gonzalez-ba8068192/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a>
+</footer>
+
+<!-- End page content -->
+</html>

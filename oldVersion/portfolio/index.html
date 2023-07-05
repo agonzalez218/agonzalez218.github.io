@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWJ9BHGMCX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JWJ9BHGMCX');
+    </script>
+    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/navbar.js"></script>
+    <link rel="icon" href="/icon.ico">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../animations.css">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-teal w3-wide w3-padding w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large">Kiwis Codex</a>
+    <div class="w3-right w3-hide-small">
+      <a href="/about" class="w3-bar-item w3-button">About Me</a>
+      <a href="/portfolio" class="w3-bar-item w3-button">Projects</a>
+      <a href="/playground" class="w3-bar-item w3-button">Playground</a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-wide w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:55px">
+  <a href="/about" class="w3-bar-item w3-button w3-padding-large w3-teal" onclick="myFunction()">About Me</a>
+  <a href="/portfolio" class="w3-bar-item w3-button w3-padding-large w3-teal" onclick="myFunction()">Portfolio</a>
+  <a href="/playground" class="w3-bar-item w3-button w3-padding-large w3-teal" onclick="myFunction()">Playground</a>
+</div>
+
+<br><br><br><br><br>
+<body>
+<h1 class="w3-center">My Project Portfolio</h1>
+
+<br>
+<div class="row w3-row-padding">
+  <div class="column left"></div>
+  <div class="column middle w3-padding w3-card w3-center pulse-teal w3-teal w3-round " >
+    <p style="font-size:20px"> The following list contains projects that show my ability and passion in programming and working on software projects. There is an image included of each project showing either the main interface or a demo of the results. If you are interested in the project, you can click the title of the project to open a new window with the github repository. </p> 
+  </div>
+  <div class="column right"></div>
+</div>
+  
+<br><br><br><br>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom w3-center">
+      <img src="tabClipboard.gif" alt="Tab Clipboard Demo Gif" style="width:70%">
+      <div class="w3-container w3-white"> 
+        <p class="wiggle"><a href="https://chrome.google.com/webstore/detail/tabclipboard/iofipmlmgcabidcodemgnopjnfcoboho/related?hl=en&authuser=0" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"><b>TabClipboard </b> <a class="fa fa-github" href="https://github.com/agonzalez218/BestPriceSearch" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"></a> </a> </p>
+        <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">HTML </span> <span class="w3-tag w3-teal w3-round">CSS </span> <span class="w3-tag w3-teal w3-round">JavaScript </span></p>
+        <p>API: <span class="w3-tag w3-teal w3-round">Google Chrome Developer</span>  </p>
+        <p>Google API Permissions: <span class="w3-tag w3-teal w3-round">Tabs</span> <span class="w3-tag w3-teal w3-round">Storage</span> </p>
+        <p>Allows a user to add a tab or all tabs to a list that can be accessed anytime. When added to TabClipboard list, a tab element can be opened, URL copied, or removed from the list.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom w3-center">
+      <img src="ChessGame.png" alt="Chess Game Demo Image" style="width:55%">
+      <div class="w3-container w3-white">
+        <p class="wiggle"><a href="https://github.com/agonzalez218/JavaChessProject" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"><b>Chess Project </b> <a class="fa fa-github" href="https://github.com/agonzalez218/JavaChessProject" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"></a> </a> </p>
+        <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">Java</span></p>
+        <p>IDE Used: <span class="w3-tag w3-teal w3-round">IntelliJ IDEA</span></p>
+        <p>I created my own Chess Game in Java. It has standard rules and gameplay. In addition, it has some options to change board color as well as enable an AI to play against.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom w3-center">
+      <img src="ToDoListJavaImg.png" alt="Java To-Do List Main Interface Image" style="width:50%">
+      <div class="w3-container w3-white"> 
+        <p class="wiggle"><a href="https://github.com/agonzalez218/ToDoListJava" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"><b>To-Do List </b> <a class="fa fa-github" href="https://github.com/agonzalez218/BestPriceSearch" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"></a> </a> </p>
+        <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">Java</span></p>
+        <p> IDE Used: <span class="w3-tag w3-teal w3-round">IntelliJ IDEA</span></p> 
+        <p>This program allows a user to maintain a To-Do List by allowing users to add, edit, and remove actions from the file list.</p>
+      </div>
+    </div>
+    
+  </div>
+  <br><br><br><br><br><br><br><br>
+</div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom w3-center">
+      <img src="raytracerImg.jpg" alt="Raytracer Test Image" style="width:55%">
+      <div class="w3-container w3-white">
+        <p class="wiggle"><a href="https://github.com/agonzalez218/RaytracerCPlus" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"><b>Raytracer </b> <a class="fa fa-github" href="https://github.com/agonzalez218/RaytracerCPlus" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"></a> </a> </p>
+        <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">C++</span></p>
+        <p>Libraries and/or Frameworks: <span class="w3-tag w3-teal w3-round">OpenGL</span></p>
+        <p>I created my own raytracer in C++ for my Computer Graphics course. It has shadows, reflections, and transformations.</p>
+      </div>
+    </div>
+      <div class="w3-third w3-container w3-margin-bottom w3-center">
+        <img src="fractalImg.gif" alt="Example of Sierpinski Tetrahedron fractal gif" style="width:80%">
+        <div class="w3-container w3-white">
+          <p class="wiggle"><a href="https://github.com/agonzalez218/OpenGLLightingFractals" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"><b>OpenGL Lighting Fractals </b> </a><a class="fa fa-github" href="https://github.com/agonzalez218/OpenGLLightingFractals" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"></a>  </p>
+          <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">C++</span></p>
+          <p>Libraries and/or Frameworks: <span class="w3-tag w3-teal w3-round">OpenGL</span></p>
+          <p>Fractals I coded in OpenGL in Computer Graphics with Phong and Gouraud lighting. The fractals are 3D Sierpinski triangle and Menger Sponge.</p>
+        </div>
+      </div>
+    
+
+  <!-- Third Photo Grid-->
+  <div class="w3-third w3-container w3-margin-bottom w3-center">
+    <img src="BankMngImg.jpg" alt="Bank Management Main Interface Image" style="width:50%">
+      <div class="w3-container w3-white">
+        <p class="wiggle"><a href="https://github.com/agonzalez218/BankManagement" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"><b>Bank Management System </b> <a class="fa fa-github" href="https://github.com/agonzalez218/BankManagement" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"></a> </a> </p>
+        <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">Java</span></p>
+        <p> IDE Used: <span class="w3-tag w3-teal w3-round">IntelliJ IDEA</span></p> 
+        <p>An application I played a large role in developing. It includes a login form with an account database containing user information and account balance. Transactions similar to a bank are made possible and affect the user information and account balance as necessary.</p>
+      </div>
+    </div>
+  </div>
+</div>  
+  <div class="w3-row-padding">
+      <div class="w3-third w3-container w3-margin-bottom w3-center">
+        <img src="BSTVHeapImg.jpg" alt="Min Heap VS Binary Search Tree Results Image" style="width:80%">
+        <div class="w3-container w3-white">
+          <p class="wiggle"><a href="https://github.com/agonzalez218/MinHeapvsBST" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"><b>Minheap vs Binary Search Tree </b> <a class="fa fa-github" href="https://github.com/agonzalez218/MinHeapvsBST" target="_blank" rel="noopener noreferrer" style="font-size: x-large;text-decoration:none;"></a> </a> </p>
+          <p>Programming Language(s): <span class="w3-tag w3-teal w3-round">C</span></p>
+          <p>This program compares how quickly these two structures, min heap and binary search tree, find the minimum value from different sets of test data. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+  <footer class="w3-container w3-teal w3-center w3-margin-top">
+    <p>Find me on social media.</p>
+    <p>(Click Icons Below)</p>
+    <a class="fa fa-github w3-hover-opacity"href="https://github.com/agonzalez218" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a>
+    <a class="fa fa-linkedin w3-hover-opacity" href="https://www.linkedin.com/in/abel-gonzalez-ba8068192/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"></a>
+  </footer>
+
+<!-- End page content -->
+</html>
