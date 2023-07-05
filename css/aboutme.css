@@ -9,42 +9,38 @@
     }
     .left {
         width: 30%;
-        padding: 1vw;
-        margin: .5vw;
     }
     .right {
-        width: 65%;
-        padding: 1vw;
-        margin: .5vw;
+        width: 60%;
     }
     .aboutme{
-        padding-left: 1vw;
+        padding-left: .5vw;
     }
     ul{
         padding-left: 0px;
     }
   }
-  
+
   @media screen and (max-width : 950px){
-   .desktop{
-    visibility:hidden;
-    display:none;
-    }
-   .mobile{
-    visibility:visible;
-    display: block;
-    }
-    .aboutme{
-        padding-left: 0px;
-    }
-    .card{
-        padding: 25px;
-        margin: 25px;
-    }
-    ul {
-        padding-left: 55px;
-    }
-  }
+    .desktop{
+     visibility:hidden;
+     display:none;
+     }
+    .mobile{
+     visibility:visible;
+     display: block;
+     }
+     .aboutme{
+         padding-left: 0px;
+     }
+     .card{
+         padding: 25px;
+         margin: 25px;
+     }
+     ul {
+         padding-left: 55px;
+     }
+   }
 
 .card_title{
     padding: 1vw;
