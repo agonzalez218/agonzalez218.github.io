@@ -1,0 +1,30 @@
+#sketch-container{
+    border: solid 10px #04AA6D;
+    height: fit-content;
+    width: fit-content;
+    padding: auto; 
+    margin: auto; 
+}
+
+button{
+    background-color: #333333;
+    border: solid 5px #04AA6D;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #04AA6D; /* Green */
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+button:active {
+    background-color: #04AA6D;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

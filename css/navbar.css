@@ -1,0 +1,25 @@
+.navbar{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    z-index: 15;
+    margin: 0;
+    top: 0;
+    font-size: x-large;
+    background-color: #04AA6D;
+    padding: 20px;
+}
+  
+.navbar a{
+    color: #fff;
+    padding: 20px;
+    font-size: x-large;
+    text-align: center;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+  
+a:hover+div {
+    display: block;
+}

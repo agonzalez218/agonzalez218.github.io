@@ -1,0 +1,122 @@
+/* 
+  This CSS file and styles are used only for the home page
+*/
+
+.intro{
+    padding-left: 70px;
+    width: fit-content;
+}
+
+@media screen{
+  .mobile{
+  visibility:hidden;
+  display:none;
+  }
+  .typewriter{
+    font-size: 5vw;
+  }
+  .typewriter2{
+    font-size: 3vw;
+  }
+  .titleLink{
+    font-size: 5vw;
+  }
+}
+
+@media screen and (max-width : 1500px){
+ .desktop{
+  visibility:hidden;
+  display:none;
+  }
+ .mobile{
+  visibility:visible;
+  display: block;
+  }
+  .typewriter{
+    font-size: 12vw;
+  }
+  .typewriter2{
+    font-size: 5.5vw;
+  }
+  .titleLink
+  {
+    font-size: 10vw;
+  }
+}
+
+.typewriter p{
+    justify-content: left;
+    display:flex;
+    overflow: hidden; 
+    max-width: 0;
+    border-right: .15em solid #04AA6D; 
+    white-space: nowrap; 
+    letter-spacing: .15em; 
+    animation: 
+      typing 3.5s steps(30, end);
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+  
+.typewriter2 p{
+    justify-content: left;
+    display:flex;
+    overflow: hidden; 
+    max-width: 0;
+    border-right: .15em solid #04AA6D; 
+    white-space: nowrap; 
+    letter-spacing: .15em; 
+    animation: 
+      typing 3.5s steps(30, end);
+    animation-fill-mode: forwards;
+    animation-delay: 4.5s;
+}
+
+.slideright {
+  animation-duration: 3s;
+  animation-name: slideinfromright;
+  animation-delay: 8s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 65%;
+}
+
+.right {
+  width:  25%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.titleLink{
+  text-align: center;
+  display: block;
+  padding: 30px;
+  font-weight: bold;
+  font-style: italic;
+  margin:auto;
+}
+
+.titleLink:hover{
+  font-style: normal;
+  color: #04AA6D;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

@@ -1,0 +1,26 @@
+/* 
+  This CSS file and styles are used for animations
+*/
+
+/* The rotating effect for programming images */
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { max-width: 0 }
+    to { max-width: 100% }
+}
+
+/* The blinking caret effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #1CE346; }
+}
+
+@keyframes slideinfromright {
+    0% {margin-left: 100%; opacity: 0%;}
+    100% {margin-left: 0%; opacity: 100%;}
+}

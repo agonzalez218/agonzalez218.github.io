@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coding Playground</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <script src="p5.js"></script>
+    <script src="../../script.js"></script>
+    <link rel="stylesheet" href="../../css/general_styles.css"/>
+    <link rel="stylesheet" href="../../css/ballDrop.css"/>
+    <link rel="stylesheet" href="../../css/navbar.css"/>
+    <link rel="stylesheet" href="../../css/animation.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="icon" type="image/x-icon" href="../../navbarIcon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="../.."><img src="../../navbarIcon.jpg" width="65" height="65"></a>    
+      <a href="/portfolio/" style="float:right">Portfolio</a>
+      <a href="/aboutme/" style="float:right">About Me</a>
+    </div>
+    <h1 style="text-align: center;">Coding Playground</h1>
+    <div class="row">
+      <div class="column left"></div>
+      <div class="column middle">
+        <div style="text-align:center;" id ="sketch-container">
+          <script src="ballDrop.js"></script>
+        </div>
+      </div>
+      <div class="column right"></div>
+    </div>
+    <br>
+
+    <div style="text-align:center;">
+      <div>
+        <label for="redMin">Red Min</label>
+        <input type="range" id="redMin" name="redMin" value = "0"
+        min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
+        <label id="redMinLabel" for="redMin"></label>
+        &emsp;&emsp;&emsp;
+        <label for="redMax">Red Max</label>
+        <input type="range" id="redMax" name="redMax" value = "255"
+        min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
+        <label id="redMaxLabel" for="redMax"></label>
+      </div>
+      <div>
+        <label for="greenMin">Green Min</label>
+        <input type="range" id="greenMin" name="greenMin" value = "0"
+        min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
+        <label id="greenMinLabel" for="greenMin"></label>
+        &emsp;&emsp;
+        <label for="greenMax">Green Max</label>
+        <input type="range" id="greenMax" name="greenMax" value = "255"
+        min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
+        <label id="greenMaxLabel" for="greenMax"></label>
+      </div>
+      <div>
+        <label for="blueMin">Blue Min</label>
+        <input type="range" id="blueMin" name="blueMin" value = "0"
+        min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
+        <label id="blueMinLabel" for="blueMin"></label>
+        &emsp;&emsp;&emsp;
+        <label for="blueMax">Blue Max</label>
+        <input type="range" id="blueMax" name="blueMax" value = "255"
+        min="0" max = "256" step="1.0" onchange="setColor()" oninput="setHTMLVars()">
+        <label id="blueMaxLabel" for="blueMax"></label>
+      </div>
+      <div>
+        <label for="ballCount">Ball Count</label>
+        <input type="range" id="ballCount" name="ballCount" value = "1"
+        min="1" max = "256" step="1.0" onchange="setup()" oninput="setHTMLVars()">
+        <label id="ballCountLabel" for="ballCount"></label>
+        &emsp;&emsp;&emsp;
+        <label for="gravity">Gravity</label>
+        <input type="range" id="gravity" name="gravity" value = "0.1"
+              min="0.01" max = "1.0" step="0.01" onchange="setup()" oninput="setHTMLVars()">
+        <label id="gravityLabel" for="gravity"></label>
+      </div>
+      <br>
+      <button type="button" onclick="setup()">Re-roll</button>
+    </div>
+  </body>
+  <br>
+
+  <footer>
+    <a href="https://github.com/agonzalez218" target="_blank"><i class="fa fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/abel-gonzalez-ba8068192/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+  </footer>
+</html>
